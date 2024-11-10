@@ -1,7 +1,7 @@
 name = "gleave"
 version = "0.1.0"
 
-description = "Exit your program with a status code"
+description = "Exit your Gleam CLI program with a status code"
 licenses = ["WTFPL"]
 repostitory = { type = "github", user = "ollien", repo = "gleave" }
 
