@@ -3,7 +3,7 @@ version = "1.0.0"
 
 description = "Exit your Gleam CLI program with a status code"
 licenses = ["WTFPL"]
-repostitory = { type = "github", user = "ollien", repo = "gleave" }
+repository = { type = "github", user = "ollien", repo = "gleave" }
 
 [dev-dependencies]
 gleeunit = ">= 1.0.0 and < 2.0.0"
