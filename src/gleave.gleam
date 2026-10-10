@@ -1,8 +1,19 @@
-/// Exit the program with the given status code
+/// Exit the program with the given exit code.
+///
+/// As on Erlang targets this function directly calls the [`halt`](https://www.erlang.org/doc/apps/erts/erlang.html#halt/1) function,
+/// passing in a negative integer will cause a runtime error.
+///
+/// In contrast, on JavaScript, the external function [`node:process.exit`](https://nodejs.org/api/process.html#processexitcode), if passed a
+/// negative integer, will always return an exit code of 127, and if passed a non-negative integer **status**,
+/// will return an exit code of **status** modulo 256.
 ///
 /// ## Examples
 /// ```gleam
-/// gleave.exit(1) // exits with status code 1
+/// gleave.exit(1)
+/// // -> Exits with status code 1
+/// gleave.exit(-1)
+/// // -> JavaScript will exit with exit code 127
+/// // -> Erlang will crash with "erlang:error(Badarg)"
 /// ```
 @external(erlang, "erlang", "halt")
 @external(javascript, "node:process", "exit")
